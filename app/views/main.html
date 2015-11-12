@@ -1,0 +1,15 @@
+<div id="main-container">
+    <h1>What interests you today?</h1>
+    <br/>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 grow" ng-repeat="category in newsCategories">
+            <a ng-href="#/{{category.name}}">
+                <img ng-src="{{category.image}}" alt="{{category.name}}" class="thumbnail"><br/>
+                <div class="category-name">
+                    {{category.name}}
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+

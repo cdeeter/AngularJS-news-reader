@@ -1,0 +1,32 @@
+<div id="category-container">
+    <span class="page-title">News in {{categoryName}}</span>
+    <input type="search" ng-model="articleSearch" placeholder="Search Articles" class="article-search"><br/><br/>
+    <div id="article-list">
+        <div class="row">
+            <br/>
+            <div ng-repeat="article in articles | filter: articleSearch" class="article-item col-xs-6 view" ng-if="article.summary.length > 100">
+                <img ng-src="{{article.thumbnail}}" alt="{{article.title}}" class="article-image" ng-class="{'pull-left': $index % 2 === 0, 'pull-right': $index % 2 !== 0}" ng-if="article.thumbnail">
+                {{article.published | date: 'MMMM, d, yyyy'}}
+                <h4><strong>{{article.title}}</strong></h4>
+                <small>by {{article.author}} - {{article.origin}}</small>
+                <br/><br/>
+                {{article.summary}}
+                <br/>
+                <div class="text-left keywords-list" ng-if="article.keywords.length > 0">
+                    <br/>
+                    <small>Keywords: 
+                        <span class="keyword" ng-repeat="item in article.keywords" ng-click="searchKeyword(item)">
+                            <a ng-href="#/{{categoryName}}">{{item}}</a><span ng-if="!$last">, </span>
+                        </span>
+                    </small>
+                </div>
+                <div class="read-more">
+                    <div class="text-right read-more-text">
+                        <a ng-href="{{article.link}}" target="_blank">Read more...</a>
+                    </div>
+                </div>
+                <div ng-if="$index > 2"><br/></div>
+            </div>
+        </div>        
+    </div>
+</div>

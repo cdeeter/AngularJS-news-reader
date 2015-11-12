@@ -1,0 +1,99 @@
+/**** Animations ****/
+.grow {
+    transition: all .3s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.1); 
+}
+
+.view.ng-enter,
+.view.ng-leave,
+.view.ng-move {
+  transition:0.5s linear all;
+}
+
+.view.ng-enter,
+.view.ng-move {
+    opacity:0; 
+}
+
+.view.ng-enter.ng-enter-active,
+.view.ng-move.ng-move-active { 
+    opacity:1; 
+}
+
+.view.ng-leave { 
+    opacity:1;
+}
+
+.view.ng-leave.ng-leave-active { 
+    opacity:0; 
+}
+
+/**** Main Page ****/
+.thumbnail {
+    height: 250px;
+    min-width: 300px;
+    max-width: 325px;
+    opacity: .9;
+}
+
+.category-name {
+    font-size: 450%;
+    font-weight: bolder;
+    margin-top: -200px;
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 325px;
+    color: black;
+    -webkit-text-stroke: 1px #b4b4b4;
+    cursor: pointer;
+    letter-spacing: -5px;
+}
+
+/**** Categories Page ****/
+.page-title {
+    font-size: 28px;
+    font-weight: bold;
+    float: left;
+}
+
+.article-search {
+    width: 75%;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    float: right;
+}
+
+#article-list {
+    display: block;
+    margin: auto;
+}
+
+.article-image {
+    width: 150px;
+    height: 150px;
+    margin-right: 25px;
+    border-radius: 50%;
+}
+
+.article-item {
+    display: block;
+    margin: auto;
+    padding: 20px;
+    width: 100%;
+    height: 325px;
+    background-color: #f8f8f8;
+    margin: 10px;    
+    border: 5px double #b4b4b4;
+    border-radius: 25px;
+}
+
+.read-more {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
