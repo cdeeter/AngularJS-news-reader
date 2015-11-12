@@ -66,7 +66,6 @@
        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
        }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
@@ -102,15 +101,12 @@
           socket.on('connect', function() {
               // ask the server if we should show the toaster or not
               socket.emit('isToasterVisible',{userID:zyringUserID});
-
               socket.on('toasterState', function (data) {
                   if (data.toasterVisibility === true) {
                       notifyToaster.log(data.msg);
                   }
               });
-
           });
-
           notifyToaster.el.onclick =  function() {
               socket.emit('toasterClicked',
                       {
@@ -120,8 +116,6 @@
                       }
               );
           };
-
-
       })();
   </script>
   </body>
