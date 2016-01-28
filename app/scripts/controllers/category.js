@@ -1,3 +1,8 @@
+'use strict';
+
+/**
+ * Controller for the Category page
+ */
 angular.module('zyringApp').controller('CategoryCtrl', function ($scope, $routeParams, Category) {
     var categoryName = $routeParams.category.toLowerCase();
     
